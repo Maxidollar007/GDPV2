@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "Mario";
+    src: url('font/Mariott_DEMO.otf') format('truetype');
+}
+@font-face {
+    font-family: "Media";
+    src: url('font/Meditative.ttf') format('truetype');
+}
+
+body{
+    height: 100%;
+}
+html{
+    height: 100%;
+}
+.maxi{
+    font-family: 'Media',sans-serif;
+}

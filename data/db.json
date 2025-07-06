@@ -1,0 +1,32 @@
+{
+  "stagiaires": [
+    {
+      "id": "b0fe",
+      "nom": "HIRWA",
+      "prenom": "JEAN",
+      "formation": "Marketing Digital",
+      "date_de_debut": "2025-06-30",
+      "date_de_fin": "2025-08-10",
+      "presence": [
+        {
+          "heure_darrivee": "",
+          "statut": false
+        }
+      ]
+    },
+    {
+      "id": "5ea1",
+      "nom": "Fokou",
+      "prenom": "Christelle",
+      "formation": "Marketing Digital",
+      "date_de_debut": "2025-08-10",
+      "date_de_fin": "2025-08-08",
+      "presence": [
+        {
+          "heure_darrivee": "",
+          "statut": false
+        }
+      ]
+    }
+  ]
+}
