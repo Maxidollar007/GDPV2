@@ -1,8 +1,36 @@
 {
   "stagiaires": [
     {
-      "id": "b0fe",
-      "nom": "HIRWA",
+      "id": "5d00",
+      "nom": "ATANGANA",
+      "prenom": "Solange",
+      "formation": "Marketing Digital",
+      "date_de_debut": "2025-06-30",
+      "date_de_fin": "2025-08-10",
+      "presence": [
+        {
+          "heure_darrivee": "",
+          "statut": false
+        }
+      ]
+    },
+    {
+      "id": "2e6f",
+      "nom": "Kenne",
+      "prenom": "Ferdinand",
+      "formation": "Developpement logiciel",
+      "date_de_debut": "2025-08-02",
+      "date_de_fin": "2025-07-31",
+      "presence": [
+        {
+          "heure_darrivee": "",
+          "statut": false
+        }
+      ]
+    },
+    {
+      "id": "a7f6",
+      "nom": "ATANGANA",
       "prenom": "JEAN",
       "formation": "Marketing Digital",
       "date_de_debut": "2025-06-30",
@@ -15,18 +43,52 @@
       ]
     },
     {
-      "id": "5ea1",
-      "nom": "Fokou",
-      "prenom": "Christelle",
+      "id": "0d5a",
+      "nom": "JEAN",
+      "prenom": "Chrisostome",
       "formation": "Marketing Digital",
-      "date_de_debut": "2025-08-10",
-      "date_de_fin": "2025-08-08",
+      "date_de_debut": "2025-06-30",
+      "date_de_fin": "2025-08-10",
       "presence": [
         {
           "heure_darrivee": "",
           "statut": false
         }
       ]
+    }
+  ],
+  "historique": [
+    {
+      "id": "5d00",
+      "nom": "ATANGANA",
+      "prenom": "Solange",
+      "statut": "Présent",
+      "heure_darrivee": "04:50:10",
+      "date": "07/07/2025"
+    },
+    {
+      "id": "2e6f",
+      "nom": "Kenne",
+      "prenom": "Ferdinand",
+      "statut": "Présent",
+      "heure_darrivee": "04:50:11",
+      "date": "07/07/2025"
+    },
+    {
+      "id": "a7f6",
+      "nom": "ATANGANA",
+      "prenom": "JEAN",
+      "statut": "absent(e)",
+      "heure_darrivee": "-",
+      "date": "07/07/2025"
+    },
+    {
+      "id": "0d5a",
+      "nom": "JEAN",
+      "prenom": "Chrisostome",
+      "statut": "absent(e)",
+      "heure_darrivee": "-",
+      "date": "07/07/2025"
     }
   ]
 }

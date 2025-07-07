@@ -1,5 +1,6 @@
 import { useState } from "react"
-
+import { Link } from "react-router-dom"
+import { motion } from "motion/react"
 export function Add(){
 
         const [formdata,setFormdata]=useState({
@@ -52,7 +53,11 @@ export function Add(){
     const button="px-4 py-2 bg-blue-500 mt-4 rounded hover:bg-blue-700 hover:cursor-pointer"
     const input="my-2 px-4 py-2 border-2 rounded hover:border-blue-500"
     return <>
-        <form action="#"  className="flex justify-center items-center flex-col min-h-screen maxi " onSubmit={handleSubmit}>
+        <motion.form action="#"  className="flex justify-center items-center flex-col min-h-screen maxi " onSubmit={handleSubmit}
+        initial={{opacity:0,y:50}}
+        animate={{opacity:1,y:0}}
+        transition={{duration:2,delay:0.5}}
+        >
             <div className="flex flex-col border-2 border-white shadow-2xl shadow-gray-400 w-[40%] bg-amber-100 p-8 rounded">
                 <h2 align="center" className="font-bold text-4xl">Ajouter des étudiants</h2>
                 <label htmlFor="nom">Nom :</label>
@@ -69,9 +74,9 @@ export function Add(){
                 <label htmlFor="fin" >Date de fin :</label>
                 <input type="date" name="date_de_fin" placeholder="Fin de stage" id="fin" required className={input} value={formdata.date_de_fin} onChange={handleChange} />
                 <div className="flex justify-between items-center">
-                <button className={button} type="submit">Enregistrer</button> <a href=""className="text-2xl hover:underline">Voir stagiaires</a>
+                <button className={button} type="submit">Enregistrer</button> <Link to={'/Presence'} className="text-2xl hover:underline">Voir stagiaires</Link>
             </div>
             </div>
-        </form>
+        </motion.form>
     </>
 }

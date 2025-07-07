@@ -1,7 +1,12 @@
-import 'remixicon/fonts/remixicon.css'
-export function Footer(){
+import { Header } from "../landing/header";
+import { Foot } from "../presence/foot";
+import { Historique } from "./historique";
+
+export function Stat(){
     return <>
-    <footer className=' flex justify-between bg-gray-800 absolute bottom-0 left-0 w-full font-semibold p-4 shadow-2xl shadow-amber-100 text-white '>
+        <Header/>
+        <Historique/>
+        <footer className=' flex justify-between bg-gray-800 absolute bottom-0 w-full font-semibold p-4 shadow-2xl shadow-amber-100 text-white '>
             <div className='my-1 flex m-auto '>©2025StagiaTrack</div>
             <div className='flex gap-10 font-semibold my-1 m-auto '>
                 <a href="" className='hover:underline'>Licence</a>
@@ -16,6 +21,5 @@ export function Footer(){
                 <i class="ri-github-fill text-xl font-normal m-auto"></i>
             </div>
         </footer>
-        
     </>
 }
