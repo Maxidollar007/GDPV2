@@ -85,7 +85,6 @@ export function Records(){
             date:date
         })
         console.log(stagiaireconcerné);
-        
         const jean=[...histostagia,person]
         setHistostagia(jean)
         fetch('http://localhost:3302/historique',{
@@ -98,18 +97,22 @@ export function Records(){
 
 //Enregistrer des personnes absentes 
 
+    var motif
         const handlevalidate=()=>{
             const d=new Date()
             const date=d.toLocaleDateString('Fr-fr')   
             if(confirm('Attention !!! Les cases non-cochées seront absents')){
                     stagiairepresence.forEach(presence=>{
-                    const personabsent={
+                    motif=prompt('Entre le motif des absents  de '+ presence.nom+' '+presence.prenom);
+                    if(motif==''){
+                        const personabsent={
                         id:presence.id,
                         nom:presence.nom,
                         prenom:presence.prenom,
                         statut:"absent(e)",
                         heure_darrivee:"-",
-                        date:date
+                        date:date,
+                        motif:'-'
                     }
                     fetch('http://localhost:3302/historique',{
                         method:'POST',
@@ -121,6 +124,27 @@ export function Records(){
                     .then(()=>{
                         window.location.reload()
                     })
+                    }else{
+                        const personabsent={
+                        id:presence.id,
+                        nom:presence.nom,
+                        prenom:presence.prenom,
+                        statut:"absent(e)",
+                        heure_darrivee:"-",
+                        date:date,
+                        motif:motif
+                    }
+                    fetch('http://localhost:3302/historique',{
+                        method:'POST',
+                        headers:{
+                            'Content-Type':'application/json'
+                        },
+                        body:JSON.stringify(personabsent)
+                    })
+                    .then(()=>{
+                        window.location.reload()
+                    })
+                    }
                     
                 })  
             }else{
@@ -140,7 +164,7 @@ export function Records(){
         transition={{duration:2,delay:0.5}}>
             <div className="flex justify-between p-4">
                 <h2 className="text-3xl font-bold">Enregistrement</h2>
-                <Link to={'/Enregistrement'}><button className={button} type="button">Ajouter</button></Link>
+                <Link to={'/Enregistrement'}><button className={button} type="button"><i class="ri-add-line"></i>Ajouter</button></Link>
             </div>
             <hr />
             <table className="text-center w-full rounded-xl my-5">
@@ -171,7 +195,7 @@ export function Records(){
             </table>
         </motion.div>
         <motion.div className="m-auto bg-gray-800 w-[80%] p-4" 
-        initial={{opacity:0,x:50}}
+        initial={{opacity:0,x:50}}       
         animate={{opacity:1,x:0}}
         transition={{duration:2,delay:0.5}}>
             <table className="text-center w-full rounde-xl my-5">
@@ -198,14 +222,7 @@ export function Records(){
                         className="mx-4"
                          onClick={(e)=>handleCheck(index)}
                         /> 
-                        {/* <input 
-                        type="checkbox" 
-                        name="checkbox" 
-                        id="checked"  
-                        className="mx-4 "
-                        style={{accentColor:'red'}}
-                        onClick={(e)=>handleCheckabse(e,index)}
-                        /> */}</td>
+                        </td>
                         <td className="border-b-1 border-gray-400 py-4 ">{stagiaires.nom} </td>
                         <td className="border-b-1 border-gray-400 py-4"> {stagiaires.prenom} </td>
                         {stagiaires.presence.map((p,index)=>(

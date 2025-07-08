@@ -16,6 +16,8 @@ export function Add(){
                 }
             ]
         })
+        
+
 
         const handleChange=(e)=>{
             const {name,value}=e.target
@@ -50,6 +52,9 @@ export function Add(){
         })
         }
 
+        
+        
+
     const button="px-4 py-2 bg-blue-500 mt-4 rounded hover:bg-blue-700 hover:cursor-pointer"
     const input="my-2 px-4 py-2 border-2 rounded hover:border-blue-500"
     return <>
@@ -59,14 +64,15 @@ export function Add(){
         transition={{duration:2,delay:0.5}}
         >
             <div className="flex flex-col border-2 border-white shadow-2xl shadow-gray-400 w-[40%] bg-amber-100 p-8 rounded">
-                <h2 align="center" className="font-bold text-4xl">Ajouter des étudiants</h2>
+                <h2 align="center" className="font-bold text-4xl">Ajouter des Stagiaires</h2>
                 <label htmlFor="nom">Nom :</label>
                 <input type="text" name="nom" placeholder="Entrer un nom ..." id="nom" required className={input} value={formdata.nom}  onChange={handleChange}/>
                 <label htmlFor="prenom" >Prénom :</label>
                 <input type="text" name="prenom" placeholder="Entrer un prenom ..." id="prenom" required className={input} value={formdata.prenom} onChange={handleChange}/>
                 <label htmlFor="nom">Formation :</label>
                 <select name="formation" id="formation" className="px-4 py-2 border-2 rounded hover:border-blue-500 " value={formdata.formation} onChange={handleChange}>
-                    <option value="Developpement Web">Developpement Web</option>
+                     <option value=""></option>
+                    <option value="Developpement Logiciel">Developpement Logiciel</option>
                     <option value="Marketing Digital">Marketing Digital</option>
                 </select>
                 <label htmlFor="debut">Date de début : </label>

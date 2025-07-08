@@ -6,8 +6,8 @@ export function Stat(){
     return <>
         <Header/>
         <Historique/>
-        <footer className=' flex justify-between bg-gray-800 absolute bottom-0 w-full font-semibold p-4 shadow-2xl shadow-amber-100 text-white '>
-            <div className='my-1 flex m-auto '>©2025StagiaTrack</div>
+        <footer className=' flex justify-between bg-gray-800 w-full font-semibold p-4 shadow-2xl shadow-amber-100 text-white '>
+            <div className='my-1 flex m-auto '>©2025StagiaTrack<sup className="text-xs">TM</sup></div>
             <div className='flex gap-10 font-semibold my-1 m-auto '>
                 <a href="" className='hover:underline'>Licence</a>
                 <a href="" className='hover:underline'>Aide</a>

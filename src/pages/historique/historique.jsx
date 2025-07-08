@@ -5,15 +5,22 @@ import { format } from "date-fns"
 
 
 export function Historique(){
+
+//Utilitaire personnalisé
+
     const input="my-2 px-6 py-1 border-2 rounded hover:border-blue-500"
     const button="px-4 py-2 bg-blue-500 mt-4 rounded hover:bg-blue-700 hover:cursor-pointer"
+    
     const d=new Date ()
     
-
+//Utilisation des hooks notamment le useState
         const [stagiaires,setStagiaires]=useState([])
         const [histostagia,setHistostagia]=useState([])
         const [date,setDate]=useState('07/07/2025')
         const [search,setSearch]=useState(false)
+        const [name,setName]=useState('')
+
+//Chargement des data
     useEffect(()=>{
         fetch('http://localhost:3302/historique')
         .then(response=>response.json())
@@ -27,18 +34,22 @@ export function Historique(){
     },[])
 
 //Nombre Total de stagiaires
-    const filterdev=stagiaires.filter(f=>f.formation=='Developpement logiciel')
+    const filterdev=stagiaires.filter(f=>f.formation=='Developpement Logiciel')
     const filtermar=stagiaires.filter(f=>f.formation=='Marketing Digital')
 
-//
+//Controle des champs controllés
     const handleChange=(e)=>{
         setDate(e.target.value)
     }
+
+    const handleChangeName=(e)=>{
+        setName(e.target.value)
+    }
+
+//Forcer le format de date en utilisatnt date fns 
     const formatted=format(date,'dd/MM/yyyy')
     
-    
-
-        const searchname=histostagia.filter(h=>{
+      /*   const searchname=histostagia.filter(h=>{
             if(h.date===formatted){
                 if(!h){
                     alert("Aucun resultat")
@@ -47,8 +58,34 @@ export function Historique(){
                 }
             }
         })
-        const present=searchname.filter(s=>s.statut==='Présent')
-        const absent=searchname.filter(s=>s.statut==='absent(e)')
+  */
+
+        const datemonthsjson=histostagia.filter(h=>parseInt(h.date.split('/')[1])==7)
+        const datemonthsuser=parseInt(date.split('/')[1])
+
+
+        const searchmonth=histostagia.filter(search=>{
+                    if(search.nom.toLowerCase().includes(name.toLowerCase())){
+                        return search
+                    }
+                })
+        
+//Trouver le nombre de personne absente et presente
+
+        const present=searchmonth.filter(s=>s.statut==='Présent')
+        const absent=searchmonth.filter(s=>s.statut==='absent(e)')
+
+        const total=present.length+absent.length; 
+
+        console.log(searchmonth);
+        
+        
+
+        
+        
+        
+        
+        
         
 
         const handlesearch=()=>{
@@ -59,7 +96,10 @@ export function Historique(){
     return <>
         <div className="w-[80%] m-auto flex justify-evenly items-center my-4 text-white">
             <div className=" items-center">
-                <label htmlFor="filtre" className="mx-10">Filtres :</label> <input type="date" name="filtre" id="filtre" className={input} value={date} onChange={handleChange} />
+                 <label htmlFor="name" className="mx-5">Nom :</label> 
+                 <input type="text" name="name" id="name" className={input} value={name} onChange={handleChangeName} />
+                 <label htmlFor="months" className="mx-5">Mois :</label> 
+                 <input type="date" name="months" id="months" className={input} value={date} onChange={handleChange} />
             </div>
             {search ? <span className="px-4 py-2 bg-red-500 mt-4 rounded hover:bg-red-700 hover:cursor-pointer"onClick={handlesearch}>Annuler</span> : <button type="button" className={button} onClick={handlesearch}>Rechercher</button>}
         </div>
@@ -80,7 +120,7 @@ export function Historique(){
                 <Taux number={absent.length} presence='Absence' date={formatted}/>
             </div>
             <div>
-                <Taux number={present.length*100/(filterdev.length+filtermar.length)} presence='%' date={formatted}/>
+                <Taux number={(present.length*100/(total)).toFixed(2)} presence='%' date={formatted}/>
             </div>
         </div>
 
@@ -97,14 +137,16 @@ export function Historique(){
                     <th  className="border-b-1 border-gray-400 py-4">Prenom</th>
                     <th  className="border-b-1 border-gray-400 py-4">Statut</th>
                     <th  className="border-b-1 border-gray-400 py-4">Heure d'arrivée</th>
+                    <th  className="border-b-1 border-gray-400 py-4">Motif</th>
                 </tr>
-            {histostagia && searchname.map((s,index)=>(
+            {histostagia && searchmonth.map((s,index)=>(
                 <tr key={index} className="hover:bg-gray-700 transition-all duration-300">
                     <td className="border-b-1 border-gray-400 py-4"> {s.date} </td>
                     <td className="border-b-1 border-gray-400 py-4"> {s.nom} </td>
                     <td className="border-b-1 border-gray-400 py-4"> {s.prenom} </td>
-                    <td className= {`border-b-1 border-gray-400 ${s.statut==="Présent"? 'bg-green-400 rounded-xl' : 'bg-red-400 rounded-xl'}`}> {s.statut} </td>
+                    <td className= {`${s.statut==="Présent"? 'text-green-400 ' : 'text-red-400 '}`}> {s.statut} </td>
                     <td className="border-b-1 border-gray-400 py-4"> {s.heure_darrivee} </td>
+                    <td> {s.motif} </td>
                 </tr>
             ))}
             </thead>
@@ -122,14 +164,16 @@ export function Historique(){
                     <th  className="border-b-1 border-gray-400 py-4">Prenom</th>
                     <th  className="border-b-1 border-gray-400 py-4">Statut</th>
                     <th  className="border-b-1 border-gray-400 py-4">Heure d'arrivée</th>
+                    <th  className="border-b-1 border-gray-400 py-4">Motif</th>
                 </tr>
             {histostagia && histostagia.map((h,index)=>(
                 <tr key={index} className="hover:bg-gray-700 transition-all duration-300">
                     <td className="border-b-1 "> {h.date} </td>
                     <td> {h.nom} </td>
                     <td className="border-b-1 "> {h.prenom} </td>
-                    <td className= {`${h.statut==="Présent"? 'text-green-600 rounded-xl' : 'text-red-400 rounded-xl'}`}> {h.statut} </td>
+                    <td className= {`${h.statut==="Présent"? 'text-green-400 ' : 'text-red-400 '}`}> {h.statut} </td>
                     <td className="border-b-1  py-4"> {h.heure_darrivee} </td>
+                    <td> {h.motif} </td>
                 </tr>
             ))}
             </thead>
