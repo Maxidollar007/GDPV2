@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { motion } from "motion/react"
+import { ToastContainer,toast } from "react-toastify"
 export function Add(){
 
         const [formdata,setFormdata]=useState({
@@ -36,7 +37,7 @@ export function Add(){
             },
             body:JSON.stringify(formdata)
            });
-           alert("Stagiaires enregsitrées avec succès")
+           
            setFormdata({
             nom:"",
             prenom:"",
@@ -50,6 +51,20 @@ export function Add(){
                 }
             ]
         })
+        }
+
+//Utilsation du message de confirmation
+        const notify=()=>{
+        toast.success(' Stagiaire enregistré', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark"
+});
         }
 
         
@@ -80,9 +95,22 @@ export function Add(){
                 <label htmlFor="fin" >Date de fin :</label>
                 <input type="date" name="date_de_fin" placeholder="Fin de stage" id="fin" required className={input} value={formdata.date_de_fin} onChange={handleChange} />
                 <div className="flex justify-between items-center">
-                <button className={button} type="submit">Enregistrer</button> <Link to={'/Presence'} className="text-2xl hover:underline">Voir stagiaires</Link>
+                <button className={button} type="submit" onClick={notify}>Enregistrer</button> <Link to={'/Presence'} className="text-2xl hover:underline">Voir stagiaires</Link>
             </div>
             </div>
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+                />
         </motion.form>
     </>
+    
 }

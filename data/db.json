@@ -2,7 +2,7 @@
   "stagiaires": [
     {
       "id": "f5cc",
-      "nom": "KENNE",
+      "nom": "KENNE KENNE",
       "prenom": "Ferdinand",
       "formation": "Developpement Logiciel",
       "date_de_debut": "2025-06-03",
@@ -153,6 +153,20 @@
           "statut": false
         }
       ]
+    },
+    {
+      "id": "42c6",
+      "nom": "Jean",
+      "prenom": "Maxi",
+      "formation": "Marketing Digital",
+      "date_de_debut": "2025-06-30",
+      "date_de_fin": "2025-08-01",
+      "presence": [
+        {
+          "heure_darrivee": "",
+          "statut": false
+        }
+      ]
     }
   ],
   "historique": [
@@ -225,7 +239,7 @@
       "prenom": "Joseph",
       "statut": "absent(e)",
       "heure_darrivee": "-",
-      "date": "08/07/2025",
+      "date": "07/07/2025",
       "motif": "Compo"
     },
     {
@@ -243,7 +257,7 @@
       "prenom": "Jessy",
       "statut": "Présent",
       "heure_darrivee": "10:20:45",
-      "date": "08/07/2025",
+      "date": "07/07/2025",
       "motif": "-"
     },
     {
@@ -252,7 +266,158 @@
       "prenom": "Adrien",
       "statut": "absent(e)",
       "heure_darrivee": "-",
-      "date": "08/07/2025",
+      "date": "07/07/2025",
+      "motif": "-"
+    },
+    {
+      "id": "f5cc",
+      "nom": "KENNE KENNE",
+      "prenom": "Ferdinand",
+      "statut": "Présent",
+      "heure_darrivee": "09:39:44",
+      "date": "09/07/2025"
+    },
+    {
+      "id": "16dc",
+      "nom": "DAMOLAYE",
+      "prenom": "Modeste",
+      "statut": "Présent",
+      "heure_darrivee": "09:39:57",
+      "date": "09/07/2025"
+    },
+    {
+      "id": "16dc",
+      "nom": "DAMOLAYE",
+      "prenom": "Modeste",
+      "statut": "Présent",
+      "heure_darrivee": "09:39:57",
+      "date": "09/08/2025"
+    },
+    {
+      "id": "16dc",
+      "nom": "ATANGANA",
+      "prenom": "Solange",
+      "statut": "Présent",
+      "heure_darrivee": "09:39:57",
+      "date": "09/07/2025"
+    },
+    {
+      "id": "16dc",
+      "nom": "ATANGANA",
+      "prenom": "Solange",
+      "statut": "absent(e)",
+      "heure_darrivee": "09:39:57",
+      "date": "09/07/2025"
+    },
+    {
+      "id": "16dc",
+      "nom": "ATANGANA",
+      "prenom": "Solange",
+      "statut": "Présent",
+      "heure_darrivee": "09:39:57",
+      "date": "09/08/2025"
+    },
+    {
+      "id": "16dc",
+      "nom": "ATANGANA",
+      "prenom": "Solange",
+      "statut": "absent(e)",
+      "heure_darrivee": "09:39:57",
+      "date": "09/08/2025"
+    },
+    {
+      "id": "9202",
+      "nom": "LANTCHOM",
+      "prenom": "Ornella ",
+      "statut": "Présent",
+      "heure_darrivee": "14:48:18",
+      "date": "09/07/2025"
+    },
+    {
+      "id": "d66c",
+      "nom": "ATANGANA",
+      "prenom": "Solange",
+      "statut": "Présent",
+      "heure_darrivee": "14:48:22",
+      "date": "09/07/2025"
+    },
+    {
+      "id": "9273",
+      "nom": "HIRWA ",
+      "prenom": "Jean",
+      "statut": "Présent",
+      "heure_darrivee": "14:48:24",
+      "date": "09/07/2025"
+    },
+    {
+      "id": "f3ed",
+      "nom": "TCHINDA",
+      "prenom": "Adrien",
+      "statut": "Présent",
+      "heure_darrivee": "14:48:25",
+      "date": "09/07/2025"
+    },
+    {
+      "id": "f5cc",
+      "nom": "KENNE KENNE",
+      "prenom": "Ferdinand",
+      "statut": "absent(e)",
+      "heure_darrivee": "-",
+      "date": "09/07/2025",
+      "motif": "-"
+    },
+    {
+      "id": "d4a6",
+      "nom": "MBA",
+      "prenom": "Joseph",
+      "statut": "absent(e)",
+      "heure_darrivee": "-",
+      "date": "09/07/2025",
+      "motif": "-"
+    },
+    {
+      "id": "16dc",
+      "nom": "DAMOLAYE",
+      "prenom": "Modeste",
+      "statut": "absent(e)",
+      "heure_darrivee": "-",
+      "date": "09/07/2025",
+      "motif": "-"
+    },
+    {
+      "id": "6785",
+      "nom": "MOUSSOK",
+      "prenom": "Tiaha",
+      "statut": "absent(e)",
+      "heure_darrivee": "-",
+      "date": "09/07/2025",
+      "motif": "-"
+    },
+    {
+      "id": "34f5",
+      "nom": "FOKOU ",
+      "prenom": "Christelle",
+      "statut": "absent(e)",
+      "heure_darrivee": "-",
+      "date": "09/07/2025",
+      "motif": "-"
+    },
+    {
+      "id": "0d01",
+      "nom": "SIMBA",
+      "prenom": "Jessy",
+      "statut": "absent(e)",
+      "heure_darrivee": "-",
+      "date": "09/07/2025",
+      "motif": "-"
+    },
+    {
+      "id": "902f",
+      "nom": "BATAMA",
+      "prenom": "Gregoire",
+      "statut": "absent(e)",
+      "heure_darrivee": "-",
+      "date": "09/07/2025",
       "motif": "-"
     }
   ]
