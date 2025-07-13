@@ -1,20 +1,6 @@
 {
   "stagiaires": [
     {
-      "id": "f5cc",
-      "nom": "KENNE KENNE",
-      "prenom": "Ferdinand",
-      "formation": "Developpement Logiciel",
-      "date_de_debut": "2025-06-03",
-      "date_de_fin": "2025-08-03",
-      "presence": [
-        {
-          "heure_darrivee": "",
-          "statut": false
-        }
-      ]
-    },
-    {
       "id": "d4a6",
       "nom": "MBA",
       "prenom": "Joseph",
@@ -161,6 +147,62 @@
       "formation": "Marketing Digital",
       "date_de_debut": "2025-06-30",
       "date_de_fin": "2025-08-01",
+      "presence": [
+        {
+          "heure_darrivee": "",
+          "statut": false
+        }
+      ]
+    },
+    {
+      "id": "bb18",
+      "nom": "ali",
+      "prenom": "Nancy ",
+      "formation": "Developpement Logiciel",
+      "date_de_debut": "2025-07-24",
+      "date_de_fin": "2025-08-10",
+      "presence": [
+        {
+          "heure_darrivee": "",
+          "statut": false
+        }
+      ]
+    },
+    {
+      "id": "4464",
+      "nom": "Jean",
+      "prenom": "Nancy ",
+      "formation": "Marketing Digital",
+      "date_de_debut": "2025-06-30",
+      "date_de_fin": "2025-08-08",
+      "presence": [
+        {
+          "heure_darrivee": "",
+          "statut": false
+        }
+      ]
+    },
+    {
+      "id": "dc63",
+      "nom": "Jean",
+      "prenom": "Chrisostomejhjhk ",
+      "formation": "Marketing Digital",
+      "date_de_debut": "2025-07-07",
+      "date_de_fin": "2025-08-10",
+      "presence": [
+        {
+          "heure_darrivee": "",
+          "statut": false
+        }
+      ]
+    },
+    {
+      "id": "38d4",
+      "nom": "fsdfsd",
+      "prenom": "fsdf",
+      "formation": "Developpement Logiciel",
+      "date_de_debut": "2025-08-03",
+      "date_de_fin": "2025-08-09",
       "presence": [
         {
           "heure_darrivee": "",
@@ -419,6 +461,12 @@
       "heure_darrivee": "-",
       "date": "09/07/2025",
       "motif": "-"
+    }
+  ],
+  "admin":[
+    {
+      "nom":"Durand",
+      "password":"Mot_de_passe"
     }
   ]
 }

@@ -5,10 +5,13 @@ import { Home } from './pages/landing/acceuil'
 import { Add } from './pages/keys/add'
 import { Enregistrement } from './pages/presence/Enregistrement'
 import { Stat } from './pages/historique/statistique'
- import { Error } from './pages/errorspages'
+import { Error } from './pages/errorspages'
+import { Ensemble } from './pages/dashbord/Ensemble'
+import { Stagiaires } from './pages/dashbord/stagiairedash'
 
 
-const router=createBrowserRouter([
+
+/* const router=createBrowserRouter([
     {
         path:'/',
         element:<Home/>
@@ -29,12 +32,15 @@ const router=createBrowserRouter([
         path:'*',
         element:<Error/>
     }
-])
+]) */
 
 function App() {
  return<>
 
-    <RouterProvider router={router}/>
+    {/* <RouterProvider router={router}/> */}
+
+
+    <Stagiaires/>
   
  </>
 }
